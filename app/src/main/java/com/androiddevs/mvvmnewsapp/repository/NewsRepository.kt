@@ -8,8 +8,9 @@ class NewsRepository(
     val db: ArticleDatabase
 ) {
     suspend fun getBreakingNews(countryCode: String, pageNumber: Int) =
-        RetrofitInstance.api.getBreakingNews(countryCode, pageNumber)
-
+        //COUNTRYCODE pas pris en compte mais "fr" oui
+        RetrofitInstance.api.getBreakingNews( countryCode, pageNumber)
+        //RetrofitInstance.api.getBreakingNews( "fr", pageNumber)
     suspend fun searchNews(searchQuery: String, pageNumber: Int) =
         RetrofitInstance.api.searchForNews(searchQuery, pageNumber)
 
